@@ -22,7 +22,7 @@ html, body{
 }
 
 .page1{
-    height: 100vh;
+    height: 90vh;
     width: 100%;
     /* background-color: aqua; */
     position: relative;
@@ -54,8 +54,9 @@ nav{
      justify-content: space-between;
      width: 100%;
      /* background-color: blueviolet; */
-     padding: 4vw 3vw;
+     padding: 2vw 2vw;
      color: white;
+     position: fixed;
      
 }
 nav ul {
@@ -71,19 +72,23 @@ nav  ul li {
 nav ul li a {
     text-decoration: none;
     color: white;
+    font-size: 0.9vw;
    
     font-weight: 100;
-   
+     
 }
+
+
+
 nav h3 {
-    font-size: 1vw;
+    font-size: 0.9vw;
     font-weight: 100;
     
 }
 
 
 nav h4 {
-    font-size: 1vw;
+    font-size: 0.9vw;
     font-weight: 700;
     
 }
@@ -91,7 +96,8 @@ nav h4 {
     color: white;
     font-size: 19vw;
     position: relative;
-    bottom: 8vw;
+    /* bottom: 8vw; */
+    top: 1vw;
     font-family: 'SuisseIntlRegular';
    
     
