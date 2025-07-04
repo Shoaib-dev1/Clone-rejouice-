@@ -179,10 +179,12 @@ display: flex;
     gap: 2vw;
     align-items: flex-start;
     justify-content: flex-start;
-margin-right: 75vw;
+    margin-right: 75vw;
     color: white;
     font-size: 1vw;
     font-weight: 100;
+    position: relative;
+    z-index: 1;
 }
 
 
