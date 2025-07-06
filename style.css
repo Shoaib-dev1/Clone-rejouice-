@@ -238,7 +238,7 @@ nav h4:hover::after {
 
 .page3{
     width: 100%;
-    height: 50vh;
+    height: 60vh;
     
 }
 
@@ -248,14 +248,319 @@ nav h4:hover::after {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    flex-direction: column;
     text-align: center;
     background-color: black;
+   
 }
-.page3-content p{
-    width: 90%;
+.page3-content h3{
+    width: 95%;
     font-size: 4vw;
-    font-weight: 300;
+    font-weight: lighter;
     color: white;
+    
+    font-family:SuisseIntlLight;
+    
 }
+.page3-content h3 span{
+    font-size: 4vw; 
+    font-weight: lighter;
+    /* font-family:SuisseIntlLight; */
+    position: relative;
+    
+}
+
+
+
+
+
+.page3-content h3 span::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 95%;
+    height: 2px;
+    background-color: white;    
+    transform: scale(1);
+    transform-origin: right;
+    transition: transform 0.5s ease;
+    
+}
+.page3-content h3:hover span::after {
+    transform: scale(0);
+    
+}
+
+
+
+.page3-content h3 span::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 95%;
+    height: 2px;
+    background-color: white;    
+    transform: scale(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+    
+}
+.page3-content h3:hover span::before {
+    transform: scale(1);
+    
+}
+
+.main hr {
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    margin-top: 2vw;
+    opacity: 0.5;
+}
+
+.page3-hr{
+    width: 90%;
+    height: 1px;
+    background-color: white;
+    margin-top: 2vw;
+    opacity: 0.5;
+    display: flex;
+
+}
+
+
+.elem{
+    overflow: hidden;
+    display: inline-block;
+}
+
+.page4{
+    min-height: 100vh;
+    width: 100%;
+    /* background-color: #000; */
+    position: relative;
+    padding: 5vw 2vw;
+    
+
+}
+
+.page4-heading{
+   text-align: center;
+   
+}
+.page4-heading h4{
+    margin-bottom: 1vw;
+    font-size: 1vw;
+    font-weight: 500;
+    overflow: hidden;
+    
+}
+
+.page4-heading h4 span{
+    font-size: 1vw;
+    background-color: #000;
+    color: white;
+    padding: 5px 10px;
+    border-radius:10px;
+}
+
+.page4-heading h2{
+    font-size: 4vw;
+    font-weight: 500;
+}
+
+
+
+.page4-media-content{
+    background-color: blue;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    margin-top: 40px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.page4-media-content img{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    
+}
+
+
+.page4-img-shadow{
+    width: 100%;
+    height: 100vh;
+    background-color: #00000018;
+    position: relative;
+   
+
+}
+
+.page4-media-content h4{
+    font-size: 2vw;
+    font-family:SuisseIntlRegular ;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    margin-bottom: 50px;
+    position: absolute;
+     opacity: 1;
+    transition: opacity 0.3s;
+
+}
+.page4-media-content:hover h4 {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.page4-image-after-content{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        overflow: hidden;
+}
+.page4-image-after-content video{
+    width: 300px;
+    height: 400px;
+   object-fit: cover;
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+     transition: opacity 0.6s;
+    
+    
+}
+
+.page4-media-content:hover .page4-image-after-content video {
+    opacity: 1;
+    
+}
+
+
+.page5{
+    min-height: 100vh;
+    width: 100%;
+    /* background-color: #000; */
+    position: relative;
+    padding: 0vw 2vw;   
+    
+    
+}
+
+.page5-elements{
+    min-height: 100vh;
+    width: 100%;
+    /* background-color: #000;  */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 5vw 2vw;
+}
+
+.page5-elements .box{
+    height: 100vh;
+    width: 49.5%;
+    /* background-color: aqua; */
+    overflow: hidden;
+    position: relative;
+    display:flex ;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+
+.page5-elements .box img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    
+    
+    
+}
+
+
+
+.page5-elements .box h4{
+    font-size: 2vw;
+    font-family:SuisseIntlRegular ;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    margin-bottom: 50px;
+    position: absolute;
+     opacity: 1;
+    transition: opacity 0.3s;
+
+}
+.page5-elements .box:hover h4 {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+
+
+
+
+.page5-image-after-content{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        overflow: hidden;
+}
+.page5-image-after-content video{
+    width: 180px;
+    height: 180px;
+   object-fit: cover;
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+     transition: opacity 0.6s;
+    
+    
+}
+
+.page5-media-content:hover .page5-image-after-content video {
+    opacity: 1;
+    
+}
+
+
+.page5-image-after-content{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        overflow: hidden;
+}
+.page5-image-after-content video{
+    width: 300px;
+    height: 400px;
+   object-fit: cover;
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+     transition: opacity 0.6s;
+    
+    
+}
+
+.box:hover .page5-image-after-content video {
+    opacity: 1;
+    
+}
+
+
+
+
+
+
+
+
 
