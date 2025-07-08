@@ -1,130 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="https://www.rejouice.com/favicon-96x96.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
-    <link rel="stylesheet" href="style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="https://www.rejouice.com/favicon-96x96.png"
+      type="image/x-icon"
+    />
+
+    <!-- Locomotive Scroll CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+    />
+
+    <!--  Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+
     <title>REJOUICE®</title>
-
-</head>
-<body>
-
+  </head>
+  <body id="smooth-scroll">
     <div id="main">
-        <div class="page1">
-           
-            <div class="page1-content">
-                <div class="mousemover"></div>
-                <nav>
-                    <h3>The Growth Accelerator</h3>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Work</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Contact</a> </li>
-                    </ul>
-
-                    <h4 >
-                       
-                        Let's talk
-                    <i class="fa-solid fa-square-up-right"></i>
-                 </h4>
-
-                </nav>
-
-                <h1>REJOUICE</h1>
-
-                <div class="page1-content-para">
-                    <p>Strategy, Design,  <br>
-                        Performance.</p>
-                    <p>Global Creative
-                    <br>  & Technology Agency.
-                    </p>
-                </div>
-            </div>
-           
-            
+      <!-- PAGE 1 -->
+      <div class="page1" data-scroll-section>
+        <div class="page1-content">
+          <div class="mousemover"></div>
+          <nav>
+            <h3 class="nav-accelerator">The Growth Accelerator</h3>
+            <ul class="nav-links">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#work">Work</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+            <h4 class="nav-letstalk">
+              Let's talk
+              <i class="fa-solid fa-square-up-right"></i>
+            </h4>
+          </nav>
+          <h1>REJOUICE</h1>
+          <div class="page1-content-para">
+            <p>
+              Strategy, Design, <br />
+              Performance.
+            </p>
+            <p>
+              Global Creative<br />
+              & Technology Agency.
+            </p>
+          </div>
         </div>
-         <div class="page2">
-             <div class="page2-content">
-                <div class="playreel">
-                    <h4>
-                        <i id="play-1" class="fa-solid fa-play"></i>
-                        play Reel
-                    
-                    </h4>
-                </div>
-                <h3>Showreel</h3>
-             <video autoplay loop muted src="./BG-video.mp4"></video>
-            </div>
+      </div>
+
+      <!-- PAGE 2 -->
+      <div class="page2" data-scroll-section>
+        <div class="page2-content">
+          <div class="playreel">
+            <h4>
+              <i class="fa-solid fa-play playreel-icon"></i>
+              play Reel
+            </h4>
+          </div>
+          <h3>Showreel</h3>
+          <video autoplay loop muted src="./BG-video.mp4"></video>
         </div>
-        <div class="page3">
-            <div class="page3-content">
-              <div class="elem">
-                 <h3> We transform founders’ visions into remarkable brands by blending strategy, design, and performance marketing. See<span> our services.</span ></h3>
-              </div>
-            
-            <div class="page3-hr"></div>
-               </div>
+      </div>
 
-
+      <!-- PAGE 3 -->
+      <div class="page3" data-scroll-section>
+        <div class="page3-content">
+          <div class="elem">
+            <h3>
+              We transform founders’ visions into remarkable brands by blending
+              strategy, design, and performance marketing. See<span>
+                our services.</span
+              >
+            </h3>
+          </div>
+          <div class="page3-hr"></div>
         </div>
-        <div class="page4">
-            <div class="page4-heading">
-                <h4>Agenct & Venture <span>Models</span></h4>
-                <h2>Explore Our Services</h2>
-                <h2>& engagement Models</h2>
-            </div>
-            <div class="page4-media-content">
-                    <img src="./rivian.avif" alt="">
-                        <h4>  RIVIAN </h4>
-                    <div class="page4-img-shadow"></div>
-                    
-                    <div class="page4-image-after-content">
-                        <!-- <h2>Case Study Rivian</h2> -->
-                        <video autoplay  loop muted src="./Video2.mp4"></video>
-                    </div>
+      </div>
 
-                   
-
-
-
-
-            </div>
+      <!-- PAGE 4 -->
+      <div class="page4" data-scroll-section>
+        <div class="page4-heading">
+          <h4>Agenct & Venture <span>Models</span></h4>
+          <h2>Explore Our Services</h2>
+          <h2>& engagement Models</h2>
         </div>
+        <div class="page4-media-content">
+          <img src="./rivian.avif" alt="Rivian Example" />
+          <h4>RIVIAN</h4>
+          <div class="page4-img-shadow"></div>
+          <div class="page4-image-after-content">
+            <video autoplay loop muted src="./Video2.mp4"></video>
+          </div>
+        </div>
+      </div>
 
-        <div class="page5">
-            <div class="page5-elements">
-                 <div class="box">
-                    <img src="./panel5-img1.avif" alt="">
-
-                     <h4> OURA</h4>
-                     <div class="page5-image-after-content">
-                        <!-- <h2>Case Study Rivian</h2> -->
-                        <video autoplay  loop muted src="./Video3.mp4"></video>
-                    </div>
-                 </div>
-                    <div class="box">
-                        <img src="panel5-img2.avif" alt="">
-
-                         <h4> MOXION</h4>
+      <!-- PAGE 5 -->
+      <div class="page5" data-scroll-section>
+        <div class="page5-elements">
+          <div class="box">
+            <img src="./panel5-img1.avif" alt="Ouran Example" />
+            <h4>OURA</h4>
             <div class="page5-image-after-content">
-                        <!-- <h2>Case Study Rivian</h2> -->
-                        <video autoplay  loop muted src="./video4.mp4"></video>
-                    </div>
-
-                    </div>
+              <video autoplay loop muted src="./Video3.mp4"></video>
             </div>
+          </div>
+          <div class="box">
+            <img src="panel5-img2.avif" alt="Moxion Example" />
+            <h4>MOXION</h4>
+            <div class="page5-image-after-content">
+              <video autoplay loop muted src="./video4.mp4"></video>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGE 6 (Partners) -->
+      <div class="page6" data-scroll-section>
+        <div class="partner">
+          <img src="./partner's/Rivian logo.svg" alt="Rivian Logo" />
+          <img style="width: 70px" src="./partner's/ORUA.svg" alt="Oura Logo" />
+          <img
+            style="width: 90px"
+            src="./partner's/Moxion.svg"
+            alt="Moxion Logo"
+          />
+          <img style="width: 70px" src="./partner's/8VC.svg" alt="8VC Logo" />
+          <img
+            style="width: 70px"
+            src="./partner's/RAPPI.svg"
+            alt="Rappi Logo"
+          />
+          <img src="./partner's/HYPERFRAME.svg" alt="Hyperframe Logo" />
+          <img
+            style="width: 80px"
+            src="./partner's/OV Loop.svg"
+            alt="OV Loop Logo"
+          />
+          <img
+            style="width: 80px"
+            src="./partner's/Proof.svg"
+            alt="Proof Logo"
+          />
+        </div>
+      </div>
+
+      <!-- PAGE 8 -->
+      <div class="page page8" data-scroll-section>
+        <h2>Our approach.</h2>
+        <div class="page8-content">
+          <div class="page8-content1">
+            <h3>
+              <span
+                >A simple philosophy: <br />
+                quality over quantity.</span
+              >
+            </h3>
+            <h4>
+              <span
+                >We partner with five clients a year, ensuring unmatched focus,
+                and impact. Every detail is carefully crafted, every decision
+                strategic, and every outcome transformative.</span
+              >
+            </h4>
+          </div>
+          <div class="page8-contnet1-hr"></div>
+          <div class="page8-content2">
+            <h3>
+              <span>Performance & emotion. <br />You need both.</span>
+            </h3>
+            <h4>
+              <span
+                >We craft brands that create an emotional connection with your
+                audience and deliver sustainable growth. Both are equally
+                important to drive retention and advocacy.</span
+              >
+            </h4>
+          </div>
+        </div>
+        <div class="scroll-zoom-section">
+          <video
+            class="scroll-zoom-video"
+            src="./video5.mp4"
+            autoplay
+            muted
+            loop
+          ></video>
         </div>
 
-    </div> 
-        
+        <div class="link-hover-wrapper">
+          <a href="#" class="link-hover">
+            <span class="word word-main">Get to know us</span>
+            <span class="word word-alt">About Us</span>
+            <div class="width-bar"></div>
+          </a>
+        </div>
+      </div>
+
+      <!--  FOOTER SECTION -->
+      <footer class="site-footer" data-scroll-section>
+        <div class="footer-outer-container">
+          <div class="footer-top-section">
+            <div class="footer-left-col">
+              <h2 class="tagline animate-on-scroll">
+                Do it once. Do it right.
+              </h2>
+              <div class="book-new-business">
+                New Business:<br />
+                <a href="mailto:hello@example.com" class="footer-link"
+                  >hello@example.com</a
+                >
+              </div>
+              <div class="newsletter-signup">
+                <p>Sign up for our newsletter (No spam)</p>
+                <form class="newsletter-form">
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    class="newsletter-input"
+                  />
+                  <button type="submit" class="newsletter-submit-btn">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9 5L16 12L9 19"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <div class="footer-right-col">
+              <div class="footer-nav-links">
+                <!-- <h3>Navigate</h3> -->
+                <ul>
+                  <li><a href="#home" class="footer-link">Home</a></li>
+                  <li><a href="#work" class="footer-link">Work</a></li>
+                  <li><a href="#about" class="footer-link">About</a></li>
+                  <li><a href="#services" class="footer-link">Services</a></li>
+                  <li><a href="#contact" class="footer-link">Contact</a></li>
+                </ul>
+                <div class="footer-location">
+                  San Diego—USA<br />
+                  Paris—France
+                </div>
+              </div>
+
+              <div class="footer-social-links">
+                <!-- <h3>Follow Us</h3> -->
+                <ul>
+                  <li>
+                    <a href="#instagram" class="social-link b-arrow">
+                      <span class="icon icon-b">↗</span>
+                      <span class="content">Instagram</span>
+                      <span class="icon icon-a">↗</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#linkedin" class="social-link b-arrow">
+                      <span class="icon icon-b">↗</span>
+                      <span class="content">LinkedIn</span>
+                      <span class="icon icon-a">↗</span>
+                    </a>
+                  </li>
+                </ul>
+                <div class="footer-copyright">
+                  <a href="/legal" class="footer-link">Terms of use</a>
+                  <span>©13—25</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom-section">
+          <div class="footer-logo">
+            <h1><span>REJOUICE</span></h1>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Locomotive Scroll JS -->
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- GSAP Core -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- GSAP ScrollTrigger Plugin -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+      integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!--  Custom JavaScript -->
     <script src="script.js"></script>
-</body>
-</html> 
+  </body>
+</html>

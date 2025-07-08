@@ -1,566 +1,1042 @@
 @font-face {
-    font-family: 'SuisseIntlRegular';
-    src: url('./SuisseIntl-Regular.woff2') format('woff2');
+  font-family: "SuisseIntlRegular";
+  src: url("./SuisseIntl-Regular.woff2") format("woff2");
 }
 
 @font-face {
-    font-family: 'SuisseIntlLight';
-    src: url('./SuisseIntl-Light.woff2') format('woff2');
+  font-family: "SuisseIntlLight";
+  src: url("./SuisseIntl-Light.woff2") format("woff2");
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow-x: hidden;
-    font-family: 'SuisseIntlRegular', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: "SuisseIntlRegular", sans-serif;
 }
 
-html, body{
-    height: 100%;
-    width: 100%;
-    
+html,
+body {
+  height: 100%;
+  width: 100%;
 }
 
-.page1{
-    height: 90vh;
-    width: 100%;
-    /* background-color: aqua; */
-    position: relative;
-    
+.page1 {
+  height: 90vh;
+  width: 100%;
+  /* background-color: aqua; */
+  position: relative;
 }
 
-.page1-content{
-    height: 100%;
-    width: 100%;
-    background-color: rgb(0, 0, 0);
-    position: relative;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-bottom: 2vw;
-   
-    z-index: 10;
-    
+.page1-content {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 2vw;
+
+  z-index: 10;
 }
 
+.mousemover {
+  width: 7vw;
+  height: 7vw;
+  border-radius: 50%;
+  background-color: #ff5f38;
+  position: fixed;
+  display: none;
 
-.mousemover{
-    width: 7vw;
-    height: 7vw;
-    border-radius: 50%;
-    background-color: #FF5F38;
-    position: fixed;
-    display: none;
-   
-    z-index: -5;
-    transform: translate(-50%, -50%);
-    
-   
-    
-
+  z-index: -5;
+  transform: translate(-50%, -50%);
 }
 
-
-.playreel h4{
-    color: rgb(148, 148, 148);
-    font-size: 1.2vw;
-    font-weight: 100;
-    position: fixed;
-    z-index: 1;
-    display: none;
-    
-
+.playreel h4 {
+  color: rgb(148, 148, 148);
+  font-size: 1.2vw;
+  font-weight: 100;
+  position: fixed;
+  z-index: 1;
+  display: none;
 }
 
-
-nav{
-     display: flex;
-     align-items: center;
-     justify-content: space-between;
-     width: 100%;
-     /* background-color: blueviolet; */
-     padding: 2vw 2vw;
-     color: white;
-     /* position: fixed  ; */
-   
-     
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  /* background-color: blueviolet; */
+  padding: 2vw 2vw;
+  color: white;
+  /* position: fixed  ; */
 }
 nav ul {
-    display: flex;
-    align-items: center;
-    justify-content:center;
-    gap: 1vw;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1vw;
 }
-nav  ul li {
-    list-style: none;
+nav ul li {
+  list-style: none;
 }
 nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 0.9vw;
-    position: relative;
-    font-weight: 100;
-     
+  text-decoration: none;
+  color: white;
+  font-size: 0.9vw;
+  position: relative;
+  font-weight: 100;
 }
-nav ul li a::after{
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: 0 ;
-    width: 100%;
-    height: 2px;
-    background-color: white;
-    transform:  scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
 }
 
 nav ul li a:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
+  transform: scaleX(1);
+  transform-origin: left;
 }
 nav h3 {
-    font-size: 0.9vw;
-    font-weight: 700;
-    
+  font-size: 0.9vw;
+  font-weight: 700;
 }
 nav h4 {
-    font-size: 0.9vw;
-    font-weight: 500;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-    
+  font-size: 0.9vw;
+  font-weight: 500;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
-
-nav h4::after{
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    width: 100%;
-    height: 2px;
-    background-color: white;
-    transform: scaleX(0);
-    transform-origin:left;
-    transition: transform 0.3s ease;
-
-} 
+nav h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
 nav h4:hover::after {
-    transform: scaleX(1);
-   
+  transform: scaleX(1);
 }
 
-.page1-content h1{
-    color: white;
-    font-size: 19vw;
-    position: relative;
-    /* bottom: 8vw; */
-    top: 1vw;
-    font-family: 'SuisseIntlRegular';
-    
-   
-    
-    
+.page1-content h1 {
+  color: white;
+  font-size: 19vw;
+  position: relative;
+  /* bottom: 8vw; */
+  top: 1vw;
+  font-family: "SuisseIntlRegular";
+  line-height: 1; /* Stabilize line height for character animation */
 }
 
+/* Styles for the character-by-character page1 animation */
+.page1-char-container {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom; /* Prevents misalignment */
+}
+
+.page1-char {
+  display: block; /* Necessary for the y-transform animation */
+}
 
 .page1-content-para {
-    display: flex;
-    gap: 2vw;
-    align-items: flex-start;
-    justify-content: flex-start;
-    margin-right: 75vw;
-    color: white;
-    font-size: 1vw;
-    font-weight: 100;
-    position: relative;
-    z-index: 1;
+  display: flex;
+  gap: 2vw;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-right: 75vw;
+  color: white;
+  font-size: 1vw;
+  font-weight: 100;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 }
-.page2{
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
+.page2 {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 
 .page2-content {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    
-    
+  width: 100%;
+  height: 100vh;
+  position: relative;
 }
 
-.page2-content h3{
-    font-size: 4vw;
-    font-weight: 500;
-    color: white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1 ;
-    overflow: hidden;
-    
-
+.page2-content h3 {
+  font-size: 4vw;
+  font-weight: 500;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  overflow: hidden;
 }
 
-.page2-content h3::after{
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    width: 100%;
-   
-    background-color: white;
-    height: 3px;
-    transform: scale(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
+.page2-content h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+
+  background-color: white;
+  height: 3px;
+  transform: scale(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
 }
 .page2-content h3:hover::after {
-    transform: scale(1);
-    transform-origin: left;
+  transform: scale(1);
+  transform-origin: left;
 }
-.page2 video{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    position: absolute;
-}
-
-
-
-.page3{
-    width: 100%;
-    height: 60vh;
-    
+.page2 video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
 }
 
-.page3-content{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    background-color: black;
-   
-}
-.page3-content h3{
-    width: 95%;
-    font-size: 4vw;
-    font-weight: lighter;
-    color: white;
-    
-    font-family:SuisseIntlLight;
-    
-}
-.page3-content h3 span{
-    font-size: 4vw; 
-    font-weight: lighter;
-    /* font-family:SuisseIntlLight; */
-    position: relative;
-    
+.page3 {
+  width: 100%;
+  height: 60vh;
 }
 
+.page3-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: black;
+}
+.page3-content h3 {
+  width: 95%;
+  font-size: 4vw;
+  font-weight: lighter;
+  color: white;
 
+  font-family: SuisseIntlLight;
+}
+.page3-content h3 span {
+  font-size: 4vw;
+  font-weight: lighter;
+  /* font-family:SuisseIntlLight; */
+  position: relative;
+}
 
-
-
-.page3-content h3 span::after{
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 95%;
-    height: 2px;
-    background-color: white;    
-    transform: scale(1);
-    transform-origin: right;
-    transition: transform 0.5s ease;
-    
+.page3-content h3 span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 95%;
+  height: 2px;
+  background-color: white;
+  transform: scale(1);
+  transform-origin: right;
+  transition: transform 0.5s ease;
 }
 .page3-content h3:hover span::after {
-    transform: scale(0);
-    
+  transform: scale(0);
 }
 
-
-
-.page3-content h3 span::before{
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 95%;
-    height: 2px;
-    background-color: white;    
-    transform: scale(0);
-    transform-origin: left;
-    transition: transform 0.5s ease;
-    
+.page3-content h3 span::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 95%;
+  height: 2px;
+  background-color: white;
+  transform: scale(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
 }
 .page3-content h3:hover span::before {
-    transform: scale(1);
-    
+  transform: scale(1);
 }
 
 .main hr {
-    width: 100%;
-    height: 1px;
-    background-color: white;
-    margin-top: 2vw;
-    opacity: 0.5;
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  margin-top: 2vw;
+  opacity: 0.5;
 }
 
-.page3-hr{
-    width: 90%;
-    height: 1px;
-    background-color: white;
-    margin-top: 2vw;
-    opacity: 0.5;
-    display: flex;
-
+.page3-hr {
+  width: 90%;
+  height: 1px;
+  background-color: white;
+  margin-top: 2vw;
+  opacity: 0.5;
+  display: flex;
 }
 
-
-.elem{
-    overflow: hidden;
-    display: inline-block;
+.elem {
+  overflow: hidden;
+  display: inline-block;
 }
 
-.page4{
-    min-height: 100vh;
-    width: 100%;
-    /* background-color: #000; */
-    position: relative;
-    padding: 5vw 2vw;
-    
-
+.page4 {
+  min-height: 100vh;
+  width: 100%;
+  /* background-color: #000; */
+  position: relative;
+  padding: 2vw 2vw;
 }
 
-.page4-heading{
-   text-align: center;
-   
+.page4-heading {
+  /* Use flexbox to stack and center the headings */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5vw;
+  padding: 6vw 0;
 }
-.page4-heading h4{
-    margin-bottom: 1vw;
-    font-size: 1vw;
-    font-weight: 500;
-    overflow: hidden;
-    
-}
-
-.page4-heading h4 span{
-    font-size: 1vw;
-    background-color: #000;
-    color: white;
-    padding: 5px 10px;
-    border-radius:10px;
+.page4-heading h4 {
+  font-size: 1.5vw;
+  font-weight: 500;
+  overflow: hidden;
+  padding: 2vw 0;
 }
 
-.page4-heading h2{
-    font-size: 4vw;
-    font-weight: 500;
+.page4-heading h4 span {
+  font-size: 1vw;
+  background-color: #000;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
 }
 
-
-
-.page4-media-content{
-    background-color: blue;
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    margin-top: 40px;
-    overflow: hidden;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
+.page4-heading h2 {
+  font-size: 3vw;
+  font-weight: 500;
+  position: relative;
+  display: inline-block; /* This makes the h2 only as wide as its text */
+  padding-bottom: 20px 0;
 }
 
-.page4-media-content img{
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-    position: absolute;
-    
+.page4-heading h2::after {
+  content: "";
+  position: absolute;
+  width: 100%; /* The underline will now match the text's width */
+  height: 2px;
+  background-color: #000;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease-out;
 }
 
-
-.page4-img-shadow{
-    width: 100%;
-    height: 100vh;
-    background-color: #00000018;
-    position: relative;
-   
-
+/* This triggers the animation only on the specific h2 you hover over */
+.page4-heading h2:hover::after {
+  transform: scaleX(1);
 }
 
-.page4-media-content h4{
-    font-size: 2vw;
-    font-family:SuisseIntlRegular ;
-    font-weight: 500;
-    color: rgb(255, 255, 255);
-    margin-bottom: 50px;
-    position: absolute;
-     opacity: 1;
-    transition: opacity 0.3s;
+.page4-media-content {
+  background-color: blue;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  margin-top: 40px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
 
+.page4-media-content img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+}
+
+.page4-img-shadow {
+  width: 100%;
+  height: 100vh;
+  background-color: #00000018;
+  position: relative;
+}
+
+.page4-media-content h4 {
+  font-size: 2vw;
+  font-family: SuisseIntlRegular;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  margin-bottom: 50px;
+  position: absolute;
+  opacity: 1;
+  transition: opacity 0.3s;
 }
 .page4-media-content:hover h4 {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
 }
 
-.page4-image-after-content{
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        overflow: hidden;
+.page4-image-after-content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
 }
-.page4-image-after-content video{
-    width: 300px;
-    height: 400px;
-   object-fit: cover;
-    opacity: 0;
-    position: absolute;
-    pointer-events: none;
-     transition: opacity 0.6s;
-    
-    
+.page4-image-after-content video {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+  transition: opacity 0.6s;
 }
 
 .page4-media-content:hover .page4-image-after-content video {
-    opacity: 1;
-    
+  opacity: 1;
 }
 
-
-.page5{
-    min-height: 100vh;
-    width: 100%;
-    /* background-color: #000; */
-    position: relative;
-    padding: 0vw 2vw;   
-    
-    
+.page5 {
+  min-height: 100vh;
+  width: 100%;
+  /* background-color: #000; */
+  position: relative;
+  padding: 0vw 2vw;
 }
 
-.page5-elements{
-    min-height: 100vh;
-    width: 100%;
-    /* background-color: #000;  */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    padding: 5vw 2vw;
+.page5-elements {
+  min-height: 100vh;
+  width: 100%;
+  /* background-color: #000;  */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 5vw 2vw;
 }
 
-.page5-elements .box{
-    height: 100vh;
-    width: 49.5%;
-    /* background-color: aqua; */
-    overflow: hidden;
-    position: relative;
-    display:flex ;
-    align-items: flex-end;
-    justify-content: center;
+.page5-elements .box {
+  height: 100vh;
+  width: 49.5%;
+  /* background-color: aqua; */
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
-
 
 .page5-elements .box img {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-    
-    
-    
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
 }
 
-
-
-.page5-elements .box h4{
-    font-size: 2vw;
-    font-family:SuisseIntlRegular ;
-    font-weight: 500;
-    color: rgb(255, 255, 255);
-    margin-bottom: 50px;
-    position: absolute;
-     opacity: 1;
-    transition: opacity 0.3s;
-
+.page5-elements .box h4 {
+  font-size: 2vw;
+  font-family: SuisseIntlRegular;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  margin-bottom: 50px;
+  position: absolute;
+  opacity: 1;
+  transition: opacity 0.3s;
 }
 .page5-elements .box:hover h4 {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
 }
 
-
-
-
-
-.page5-image-after-content{
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        overflow: hidden;
+.page5-image-after-content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
 }
-.page5-image-after-content video{
-    width: 180px;
-    height: 180px;
-   object-fit: cover;
-    opacity: 0;
-    position: absolute;
-    pointer-events: none;
-     transition: opacity 0.6s;
-    
-    
+.page5-image-after-content video {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+  transition: opacity 0.6s;
 }
 
 .page5-media-content:hover .page5-image-after-content video {
-    opacity: 1;
-    
+  opacity: 1;
 }
 
-
-.page5-image-after-content{
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        overflow: hidden;
+.page5-image-after-content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
 }
-.page5-image-after-content video{
-    width: 300px;
-    height: 400px;
-   object-fit: cover;
-    opacity: 0;
-    position: absolute;
-    pointer-events: none;
-     transition: opacity 0.6s;
-    
-    
+.page5-image-after-content video {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+  object-position: center;
+  transition: opacity 0.6s;
 }
 
 .box:hover .page5-image-after-content video {
-    opacity: 1;
-    
+  opacity: 1;
 }
 
+.page6 {
+  width: 100%;
+  height: 40vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.page6 .partner {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
 
+.page6 .partner img {
+  width: 120px;
 
+  object-fit: cover;
+}
 
+.page6-hr {
+  width: 90%;
+  height: 1px;
+  background-color: rgb(165, 165, 165);
+  margin-top: 2vw;
+  /* opacity: 0.5; */
+  display: flex;
+}
 
+.page8 h2 {
+  font-size: 4vw;
+  font-weight: 100;
+  font-family: SuisseIntlLight;
+  padding: 50px 50px;
+}
 
+.page8-hr {
+  width: 90%;
+  height: 1px;
+  background-color: rgb(165, 165, 165);
+  margin-top: 2vw;
+  /* opacity: 0.5; */
+  display: flex;
+  margin-bottom: 100px;
+}
 
+.page8-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.page8-content1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
 
+  padding: 20px;
+  overflow: hidden;
+}
+
+.page8-contnet1-hr {
+  width: 95%;
+  height: 1px;
+  background-color: rgb(165, 165, 165);
+  margin-top: 2vw;
+  /* opacity: 0.5; */
+  display: flex;
+  margin-bottom: 5px;
+}
+.page8-content1 h3 {
+  /* width: 20%; */
+  color: #000;
+
+  font-weight: 100;
+  font-family: SuisseIntlLight;
+}
+
+.page8-content1 h4 {
+  width: 20%;
+  color: #000;
+  font-weight: 100;
+  font-family: SuisseIntlLight;
+}
+
+.page8-content2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.page8-contnet2-hr {
+  width: 95%;
+  height: 1px;
+  background-color: rgb(165, 165, 165);
+  margin-top: 2vw;
+  /* opacity: 0.5; */
+}
+.page8-content2 h3 {
+  /* width: 20%; */
+  color: #000;
+  font-weight: 100;
+  font-family: SuisseIntlLight;
+}
+
+.page8-content2 h4 {
+  width: 20%;
+  color: #000;
+  font-weight: 100;
+  font-family: SuisseIntlLight;
+}
+
+.scroll-zoom-section video {
+  width: 80%;
+  height: 100vh;
+  margin-top: 20vw;
+}
+
+.scroll-zoom-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  overflow: hidden;
+}
+.scroll-zoom-video {
+  /* width: 40vw;    
+  /* width: 100%;
+  height: auto; */
+  max-width: 100vw;
+  height: 100%;
+  border-radius: 16px;
+  display: block;
+  transition: none;
+  object-fit: cover;
+}
+
+.link-hover-wrapper {
+  display: inline-block;
+  position: relative;
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 250px;
+}
+.link-hover {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: #111;
+  font-size: 3.5vw;
+  font-family: SuisseIntlLight;
+  font-weight: 100;
+  overflow: hidden;
+  height: 2.5em;
+}
+
+.link-hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 60%;
+  height: 3px;
+  background-color: #111;
+  transform: scaleX(0);
+
+  margin-top: 20px;
+  margin-left: 20%;
+  transform-origin: right;
+  transition: transform 0.8s ease;
+}
+.link-hover:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.word {
+  display: block;
+  position: relative;
+  left: 0;
+  width: 100%;
+  top: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.word-main {
+  z-index: 2;
+}
+.word-alt {
+  z-index: 1;
+  text-align: center;
+}
+
+.width-bar {
+  height: 3px;
+  background: #111;
+  width: 100%;
+  margin-top: 1.2em;
+  border-radius: 2px;
+  transition: width 0.4s cubic-bezier(0.77, 0, 0.18, 1);
+  position: relative;
+}
+
+/* --- FOOTER STYLES --- */
+.site-footer {
+  background-color: #0a0a0a;
+  color: #ccc;
+
+  position: relative;
+  /* z-index: -2; */
+  overflow: hidden;
+}
+
+.footer-outer-container {
+  /* max-width: 1200px; */
+  /* margin: 0 auto; */
+  /* min-height: 50vh; */
+  position: relative;
+  padding: 50px;
+}
+
+.footer-top-section {
+  display: flex;
+  justify-content: space-around;
+  gap: 50%;
+}
+
+.footer-left-col {
+  flex-basis: 50%;
+}
+
+.footer-right-col {
+  flex-basis: 50%;
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: space-between;
+
+  gap: 50px;
+  margin-top: 0;
+}
+
+.footer-left-col h2.tagline {
+  font-size: 2vw;
+  margin-bottom: 30px;
+  font-family: SuisseIntlLight;
+  font-weight: 100;
+  line-height: 1;
+  font-weight: 700;
+  overflow: hidden;
+}
+
+.book-new-business {
+  margin-bottom: 30px;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+.book-new-business a {
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+.newsletter-signup p {
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.newsletter-form {
+  display: flex;
+  align-items: center;
+}
+
+.newsletter-input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #fffefe;
+  color: #ffffff;
+  padding: 8px 10px;
+  margin-right: 10px;
+  font-size: 1rem;
+  outline: none;
+  flex-grow: 1;
+  transition: border-color 0.3s ease;
+}
+
+.newsletter-input::placeholder {
+  color: #ffffff;
+}
+
+.newsletter-input:focus {
+  border-bottom-color: #e5097f;
+}
+
+.newsletter-submit-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fffbfb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  transition: color 0.3s ease;
+}
+
+.newsletter-submit-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+
+.newsletter-input:focus ~ .newsletter-submit-btn,
+.newsletter-input:not(:placeholder-shown) ~ .newsletter-submit-btn {
+  color: #ff0000;
+}
+
+.footer-nav-links ul li {
+  padding: 2px 0;
+}
+
+.footer-nav-links ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 0.8vw;
+  overflow: hidden;
+  position: relative;
+}
+
+.footer-nav-links ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 100%;
+  background-color: white;
+  transform: scale(0);
+  transform-origin: right;
+  transition: transform 0.5s ease;
+}
+
+.footer-nav-links ul li a:hover::after {
+  transform: scale(1);
+  transform-origin: left;
+}
+
+.footer-social-links {
+}
+.footer-social-links ul li {
+  padding: 3px 0;
+}
+
+.footer-social-links ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 0.9vw;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 
+.footer-social-links ul li a span::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    transform: scale(0);
+    transform-origin: right;
+    transition: transform  0.5s ease;
+
+}
+
+.footer-social-links ul li a span:hover::after{
+    transform: scale(1);
+    transform-origin: left;
+     
+}
+*/
+.footer-nav-links h3,
+.footer-social-links h3 {
+  font-size: 0.8vw;
+  margin-bottom: 20px;
+}
+
+.footer-nav li,
+.footer-social li {
+  margin-bottom: 15px;
+}
+
+.footer-nav a,
+.footer-social a {
+  font-size: 1rem;
+  color: #ffffff;
+  position: relative;
+  padding-bottom: 3px;
+  text-decoration: none;
+}
+
+/* Hover effect for nav links */
+.footer-nav a::after,
+.footer-social a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #e5097f; /* Accent color */
+  transition: width 0.3s ease;
+}
+
+.footer-nav a:hover::after,
+.footer-social a:hover::after {
+  width: 100%;
+}
+
+/* Social link specific styling */
+.social-link.b-arrow {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  padding-right: 40px;
+}
+
+.social-link .icon {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.social-link .icon-a {
+  /* Arrow that appears on the right */
+  right: 0;
+  transform: translateX(-10px);
+}
+
+.social-link .icon-b {
+  /* Arrow that appears on the left */
+  left: 0;
+  transform: translateX(10px);
+}
+
+.social-link .content {
+  transition: transform 0.3s ease;
+}
+
+/* Note: GSAP will handle the hover animation for social links */
+
+.footer-location {
+  margin-top: 30px;
+  font-size: 0.8vw;
+  color: #ffffff;
+  line-height: 1.8;
+  flex-basis: 100% !important;
+}
+
+.footer-copyright {
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: #ffffff;
+  flex-basis: 100%;
+  position: absolute;
+  bottom: 35%;
+}
+
+.footer-copyright a {
+  font-size: 0.8vw;
+  color: #ffffff;
+  margin-right: 10px;
+}
+
+.footer-copyright a:hover {
+  color: #fff;
+}
+
+.footer-bottom-section {
+  width: 100%;
+  /* height: 100vh; */
+  padding: 20px;
+  /* background-color: #000; */
+  /* position: relative; */
+  /* z-index: 2; */
+  overflow: hidden;
+}
+
+.footer-logo {
+  overflow: hidden;
+}
+.footer-logo h1 {
+  color: white;
+  font-size: 18vw;
+  text-align: center;
+  /* bottom: 8vw; */
+  font-family: "SuisseIntlRegular";
+  line-height: 1; /* Stabilize the line height to prevent jumping */
+}
+
+/* Styles for the character-by-character footer animation */
+.footer-char-container {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom; /* Prevents misalignment */
+}
+
+.footer-char {
+  display: block; /* Necessary for the y-transform animation */
+}
