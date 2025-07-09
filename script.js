@@ -1,3 +1,6 @@
+// Hide elements on load to prevent flash of unstyled content (FOUC)
+gsap.set(".page1-content h1, .page1-content-para", { opacity: 0 });
+
 function animationslocomotive() {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -98,9 +101,41 @@ function MouseMoverEffect() {
 }
 MouseMoverEffect();
 
+
+function loader(){
+  var timeLine = gsap.timeline({
+    onComplete: page1 // Call page1 animation after loader is done
+  });
+  timeLine.from(".loader h3",{
+      x:50,
+      opacity:0,
+      duration:1,
+      stagger:0.1,
+  })
+  .to(".loader h3",{
+      opacity:0,
+      x:-10,
+      duration:0.5,
+      stagger:0.1,
+      delay:1
+  })
+  .to(".loader",{
+      opacity:0,
+  })
+  .to(".loader",{
+      display:"none",
+  });
+}
+
+loader();
+
+
 function page1() {
   const page1H1 = document.querySelector(".page1-content h1");
   if (!page1H1) return;
+
+  // Make containers visible before animating children
+  gsap.set(".page1-content h1, .page1-content-para", { opacity: 1 });
 
   // Split the text into characters for the animation
   const text = page1H1.textContent.trim();
@@ -123,7 +158,7 @@ function page1() {
     stagger: 0.05,
     duration: 1,
     ease: "power3.out",
-    delay: 0.5,
+    delay: 0, // Removed delay to start immediately
   });
 
   // Animate the paragraph below the heading
@@ -133,10 +168,9 @@ function page1() {
     duration: 1,
     ease: "power3.out",
     stagger: 0.2,
-    delay: 0.8,
+    delay: 0.2, // Reduced delay to start shortly after the heading
   });
 }
-page1();
 
 function page3() {
   gsap.from(".elem h3", {
